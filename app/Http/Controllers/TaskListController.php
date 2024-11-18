@@ -12,7 +12,7 @@ class TaskListController extends Controller
      */
     public function index()
     {
-        //
+        return view('public.pages.lists.index');
     }
 
     /**
@@ -28,7 +28,14 @@ class TaskListController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $list = $request->validate([
+            'name' => 'required',
+            'description' => 'nullable',
+        ]);
+
+        TaskList::create($list);
+
+        return back()->with('status', 'The List added successfully.');
     }
 
     /**
@@ -52,7 +59,14 @@ class TaskListController extends Controller
      */
     public function update(Request $request, TaskList $taskList)
     {
-        //
+        $list = $request->validate([
+            'name' => 'required',
+            'description' => 'nullable',
+        ]);
+
+        $taskList->update($list);
+
+        return back()->with('status', 'The List updated successfully.');
     }
 
     /**
@@ -60,6 +74,7 @@ class TaskListController extends Controller
      */
     public function destroy(TaskList $taskList)
     {
-        //
+        $taskList->delete();
+        return back()->with('status', 'The List deleted successfully.');
     }
 }

@@ -28,7 +28,16 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $task = $request->validate([
+            'task' => 'required',
+            'description' => 'nullable',
+        ]);
+
+        $task['task_list_id'] = 1;
+
+        Task::create($task);
+
+        return back()->with('status', 'The task added successfully.');
     }
 
     /**
@@ -52,7 +61,14 @@ class TaskController extends Controller
      */
     public function update(Request $request, Task $task)
     {
-        //
+        $new_task = $request->validate([
+            'task' => 'required',
+            'description' => 'nullable',
+        ]);
+
+        $task->update($new_task);
+
+        return back()->with('status', 'The task updated successfully.');
     }
 
     /**
@@ -60,6 +76,7 @@ class TaskController extends Controller
      */
     public function destroy(Task $task)
     {
-        //
+        $task->delete();
+        return back()->with('status', 'The task deleted successfully.');
     }
 }

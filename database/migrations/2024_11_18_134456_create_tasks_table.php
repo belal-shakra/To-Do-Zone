@@ -16,8 +16,10 @@ return new class extends Migration
 
             $table->string('task');
             $table->string('description')->nullable();
+            $table->foreignId('task_list_id')->constrained()->after('description');
 
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
