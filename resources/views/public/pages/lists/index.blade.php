@@ -18,7 +18,7 @@
             <div class="card-body">
               <h5 class="card-title">Shopping List</h5>
               <p class="card-text text-truncate">Lorem ipsum dolor sit amet.</p>
-              <a href="#" class="btn btn-primary position-absolute" style="bottom: 16px">Show</a>
+              <a href="{{ route('list.show', 1) }}" class="btn btn-primary position-absolute" style="bottom: 16px">Show</a>
             </div>
           </div>
         </div>
@@ -28,7 +28,7 @@
             <div class="card-body position-relative">
               <h5 class="card-title">Shopping List</h5>
               <p class="card-text text-truncate"></p>
-              <a href="#" class="btn btn-primary position-absolute" style="bottom: 16px">Show</a>
+              <a href="{{ route('list.show', 1) }}" class="btn btn-primary position-absolute" style="bottom: 16px">Show</a>
             </div>
           </div>
         </div>

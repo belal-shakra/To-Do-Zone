@@ -43,7 +43,7 @@ class TaskListController extends Controller
      */
     public function show(TaskList $taskList)
     {
-        //
+        return view('public.pages.lists.show');
     }
 
     /**

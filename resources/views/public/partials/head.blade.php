@@ -28,6 +28,7 @@
   <!-- Main CSS File -->
   <link href="{{ asset('assets') }}/css/main.css" rel="stylesheet">
 
-
+  <!-- Option 1: Include in HTML -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
 </head>
